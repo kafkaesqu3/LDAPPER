@@ -136,6 +136,11 @@ Search for Unconstrained SPN Delegations with no effort:
 
     python LDAPPER.py -D 'EMP' -U 'bob' -P 'password' -S '10.0.0.2,10.0.0.3' -m 0  -s 4
 
+Increase pagesize and delay for larger environments: 
+
+`python3 LDAPPER.py -D 'CONTOSO' --server 'corp.ad.contoso.com' --user 'bob' --password 'hunter2' --basedn 'DC=corp,DC=ad,DC=contoso,DC=com' --outfile groups --search '1' --maxrecords 0 --format json --pagesize 50 --delay 25`
+
+
 References
 ==========
 

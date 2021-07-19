@@ -21,12 +21,12 @@ custom_search = [
     {
      'help': 'Get all users',
      'ldap': '(objectcategory=user)', 
-     'filter': ['cn', 'description', 'mail', 'memberOf', 'sAMAccountName'],
+     'filter': ['cn', 'displayName', 'description', 'mail', 'memberOf', 'sAMAccountName', 'employeeNumber', 'pwdLastSet', 'lastLogonTimestamp'],
      'children': [
         {
          'help': 'Get specific user (You will be prompted for the username)',
          'ldap': '(&(objectclass=user)(|(CN={0})(sAMAccountName={0})))', 
-         'filter': ['cn', 'description', 'mail', 'memberOf', 'sAMAccountName'],
+         'filter': ['cn', 'displayName', 'description', 'mail', 'memberOf', 'sAMAccountName', 'employeeNumber', 'pwdLastSet', 'lastLogonTimestamp'],
          'options': [
             {
                 'question': 'Username to search for',
@@ -39,12 +39,12 @@ custom_search = [
     {
      'help': 'Get all groups (and their members)',
      'ldap': '(objectclass=group)', 
-     'filter': ['member', 'displayName'],
+     'filter': ['member', 'displayName', 'description', ],
      'children': [
         {
          'help': 'Get specific group (You will be prompted for the group name)',
          'ldap': '(&(objectclass=group)(|(CN={0})(sAMAccountName={0})))', 
-         'filter': ['member', 'displayName'],
+         'filter': ['member', 'displayName', 'description', ],
          'options': [
             {
                 'question': 'Group name to search for',
